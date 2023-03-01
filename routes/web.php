@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,3 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::view('/', 'index')->name('login');
+
+Route::post('login', LoginController::class);
+
+Route::view('/welcome', 'welcome');
