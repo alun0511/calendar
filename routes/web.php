@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +17,7 @@ use App\Http\Controllers\LoginController;
 Route::view('/', 'index')->name('login');
 
 Route::post('login', LoginController::class);
+
+Route::get('logout', LogoutController::class);
 
 Route::view('/welcome', 'welcome');
