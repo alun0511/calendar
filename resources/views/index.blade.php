@@ -1,7 +1,7 @@
 @include('errors')
 <form method="POST" action="/login">
     <div>
-        <label for="email">Enter username:</label>
+        <label for="email">Enter email:</label>
         <input type="text" name="email">
     </div>
     <div>
