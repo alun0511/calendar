@@ -11,3 +11,5 @@
     <button type="submit">Login</button>
     @csrf
 </form>
+<h2>Dont have an account? create one!</h2>
+<button><a href="/register">Register</a></button>
