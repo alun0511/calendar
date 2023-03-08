@@ -6,9 +6,8 @@ if (errorField.firstChild != null) {
     }, 500);
     setTimeout(() => {
         errorField.classList.remove("error-active");
-    }, 4000);
-
+    }, 5000);
     setTimeout(() => {
         errorField.classList.remove("error-active");
-    }, 8000);
+    }, 10000);
 }
