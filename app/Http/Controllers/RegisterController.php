@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
@@ -19,16 +20,15 @@ class RegisterController extends Controller
             'password' => 'required|string|min:8'
         ]);
 
-        $credentials = $request->only('email','username', 'password');
+        $credentials = $request->only('email', 'username', 'password');
 
-        try{
+        try {
             User::create(['email' => $credentials['email'], 'name' => $credentials['username'], 'password' => Hash::make($credentials['password'])]);
             return redirect('/');
-        }catch(QueryException $e){
+        } catch (QueryException $e) {
             return back()->withErrors([
                 'email' => 'This email is already in use, please log in with it or try a different one',
             ])->onlyInput('email');
         }
-        
     }
 }

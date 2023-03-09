@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use App\Models\Location;
 
 class Event extends Model
 {
@@ -19,9 +21,13 @@ class Event extends Model
     ];
 
     protected $attributes = [
-        'location_id' => 1,
         'accepted' => false,
     ];
 
     public $timestamps = false;
+
+    public function location(): HasOne
+    {
+        return $this->hasOne(Location::class, 'id', 'location_id');
+    }
 }
