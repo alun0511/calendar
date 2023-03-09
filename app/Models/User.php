@@ -31,4 +31,8 @@ class User extends Authenticatable
     ];
     public $timestamps = false;
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }
