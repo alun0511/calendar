@@ -19,7 +19,7 @@ class CreateEventController extends Controller
             'title' => 'required|string|min:3',
             'start_date' => 'required|date|after:yesterday',
             'end_date' => 'required|date|after:start_date',
-            'location_id' => 'required|integer|max:10',
+            'location_id' => 'required|integer',
         ]);
 
 
