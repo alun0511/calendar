@@ -1,0 +1,21 @@
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25rem;
+    height: 16rem;
+}
+
+form div {
+    height: 3rem;
+}

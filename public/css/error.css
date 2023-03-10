@@ -1,0 +1,16 @@
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5vh;
+    width: 100vw;
+    height: 5vh;
+    background-color: red;
+    color: white;
+    transition: top 0.2s ease;
+}
+
+.error-active {
+    top: 0;
+}
