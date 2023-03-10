@@ -18,7 +18,6 @@ return new class extends Migration
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->integer('location_id');
-            $table->boolean('accepted')->default(0);
         });
     }
     //     id (PK)

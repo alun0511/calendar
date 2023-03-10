@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('event_id');
             $table->integer('user_id');
+            $table->boolean('accepted')->default(0);
+            $table->boolean('updated')->default(0);
         });
     }
 
