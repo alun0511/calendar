@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Event;
+use App\Models\Invitation;
 use App\Models\Invite;
 use App\Models\Participant;
 use Illuminate\Support\Carbon;
@@ -37,7 +38,7 @@ class CreateEventController extends Controller
         $event->save();
 
         foreach ($invitations_array as $invite) {
-            $invitations = new Invite();
+            $invitations = new Invitation();
             $invitations->user_id = DB::table('users')->where('email', $invite)->value('id');
             $invitations->event_id = $event->id;
             $invitations->save();

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
-use App\Models\Invite;
+use App\Models\Invitation;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +22,7 @@ class DashboardController extends Controller
         $users = User::All();
         $events = Event::all();
         $locations = Location::all();
-        $invitations = Invite::all();
+        $invitations = Invitation::all();
 
         return view('dashboard', [
             'user' => $user,

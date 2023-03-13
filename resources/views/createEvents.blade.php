@@ -1,6 +1,6 @@
 <?php
     use App\Models\Event;
-    use App\Models\Invite;
+    use App\Models\Invitation;
     use App\Models\Location;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
@@ -10,7 +10,7 @@
     $users = User::All();
     $events = Event::all();
     $locations = Location::all();
-    $invitations = Invite::all();
+    $invitations = Invitation::all();
 ?>
 <link rel="stylesheet" href="{{ asset('./css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('./css/dashboard.css') }}">
