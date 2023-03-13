@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use App\Models\Location;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Event extends Model
 {
@@ -17,14 +19,19 @@ class Event extends Model
         'start_date',
         'end_date',
         'location_id',
-        'accepted',
-    ];
-
-    protected $attributes = [
-        'accepted' => false,
     ];
 
     public $timestamps = false;
+
+    public function invitations(): HasMany
+    {
+        return $this->hasMany(Invitation::class);
+    }
+
+    public function invitedUsers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'invitations', 'event_id', 'user_id');
+    }
 
     public function location(): HasOne
     {

@@ -31,7 +31,6 @@ class CreateEventController extends Controller
         $event->start_date = $request->input('start_date');
         $event->end_date = $request->input('end_date');
         $event->location_id = $request->input('location');
-        $event->accepted = false;
         $event->save();
 
         return back();

@@ -31,6 +31,16 @@ class User extends Authenticatable
     ];
     public $timestamps = false;
 
+    public function sentInvitations()
+    {
+        return $this->hasMany(Invitation::class, 'event_id');
+    }
+
+    public function receivedInvitations()
+    {
+        return $this->hasMany(Invitation::class, 'user_id');
+    }
+
     public function events()
     {
         return $this->hasMany(Event::class);

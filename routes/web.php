@@ -6,6 +6,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CreateEventController;
+use App\Http\Controllers\InvitationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::post('login', LoginController::class);
 Route::get('logout', LogoutController::class);
 
 Route::post('events', CreateEventController::class)->middleware('auth');
+
+Route::get('invitations', InvitationController::class)->middleware('auth');
 
 Route::view('/register', 'register');
 
