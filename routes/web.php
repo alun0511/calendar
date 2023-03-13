@@ -33,4 +33,6 @@ Route::view('/register', 'register');
 
 Route::post('/register/attempt', RegisterController::class);
 
+Route::get('/createEvents', DashboardController::class)->middleware('auth');
+
 Route::get('dashboard', DashboardController::class)->middleware('auth');
