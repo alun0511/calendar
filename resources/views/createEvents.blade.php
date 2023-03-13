@@ -1,20 +1,34 @@
 <?php
+    use App\Models\Event;
+    use App\Models\Invite;
+    use App\Models\Location;
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Auth;
+    use App\Models\User;
     use Illuminate\Support\Facades\DB;
+    $user = Auth::user();
+    $users = User::All();
+    $events = Event::all();
+    $locations = Location::all();
+    $invitations = Invite::all();
 ?>
 <link rel="stylesheet" href="{{ asset('./css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('./css/dashboard.css') }}">
 <link rel="stylesheet" href="{{ asset('./css/createEvents.css') }}">
+<link rel="stylesheet" href="{{ asset('./css/displayBlocks.css') }}">
 @include('errors')
 <html>
     <body>
         <header>
-            <h1>Create a calendar event</h1>
-            <a href="/logout"><button>Logout</button></a>
-            <a href="/dashboard">
                 <button>
-                    Back
+                    <a href="/dashboard">
+                        Back
+                    </a>
                 </button>
-            </a>
+            <h1>Create a calendar event</h1>
+            <button>
+                <a href="/logout">Logout</a>
+            </button>
         </header>
     <main class="create-events-main">
         <section class="create-events-container">

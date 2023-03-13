@@ -24,7 +24,7 @@ class DashboardController extends Controller
         $locations = Location::all();
         $invitations = Invite::all();
 
-        return view('createEvents', [
+        return view('dashboard', [
             'user' => $user,
             'users' => $users,
             'events' => $events,
