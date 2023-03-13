@@ -20,29 +20,15 @@ class InvitationController extends Controller
         $events = Event::all();
         $invitations = Invitation::all();
 
+        $received = Invitation::where('user_id', $user->id)->get();
 
-        return view('invitations', [
+
+
+        return view('/dashboard', [
             'user' => $user,
             'events' => $events,
             'invitations' => $invitations,
-        ]);
-    }
-    public function showReceivedEvents()
-    {
-        // Get the logged-in user
-        $user = auth()->user();
-
-        // Get the user's received invitations
-        $receivedInvitations = $user->receivedInvitations;
-
-        // // Get the associated events for the received invitations
-        // $receivedEvents = $receivedInvitations->map(function ($invitation) {
-        //     return $invitation->event;
-        // });
-
-        // Pass the received events to the view
-        return view('received-events', [
-            'invitations' => $receivedInvitations
+            'received' => $received,
         ]);
     }
 }

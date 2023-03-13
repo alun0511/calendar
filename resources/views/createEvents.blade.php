@@ -80,11 +80,11 @@
                     <div class="post-info">
                         <h2>{{$event->title}}</h2>
                         <div>
-                            <i>Created by: <?=DB::table('users')->where('id', $event->user_id)->value('name');?></i>
+                            <i>Created by: {{$event->creator->name}}
                             <p>Location: {{$event->location->name}}</p>
                         </div>
                     </div>
-                    
+
                     <div class="post-dates">
                         <ul>
                             <li>From: {{$event->start_date}}</li>
@@ -92,17 +92,17 @@
                         </ul>
                     </div>
                 </section>
-                
+
                 <section class="participants-list">
                     <h3>Invited users</h3>
                     <ul>
-                        @foreach ($event->invitations as $invite)
-                        <li>{{DB::table('users')->where('id', $invite->user_id)->value('name')}}</li>
+                        @foreach ($event->invitedUsers as $invited)
+                        <li>{{$invited->name}}</li>
                         @endforeach
                     </ul>
                 </section>
             </section>
-                
+
             @endforeach
         </div>
 </section>

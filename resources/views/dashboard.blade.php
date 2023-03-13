@@ -14,11 +14,14 @@
     <header>
         <button><a href="/createEvents">Create event</a></button>
         <h1>Calendar</h1>
+            @include('invitations')
         <button><a href="/logout">Logout</a></button>
-        @include('invitations')
+
+
     </header>
 
     <main class="dashboard-main">
+
     <section class="user-posts">
         <h2>Your accepted invites:</h2>
         <div class="posts-container">
