@@ -35,14 +35,14 @@ class InvitationController extends Controller
         // Get the user's received invitations
         $receivedInvitations = $user->receivedInvitations;
 
-        // Get the associated events for the received invitations
-        $receivedEvents = $receivedInvitations->map(function ($invitation) {
-            return $invitation->event;
-        });
+        // // Get the associated events for the received invitations
+        // $receivedEvents = $receivedInvitations->map(function ($invitation) {
+        //     return $invitation->event;
+        // });
 
         // Pass the received events to the view
         return view('received-events', [
-            'events' => $receivedEvents
+            'invitations' => $receivedInvitations
         ]);
     }
 }

@@ -1,17 +1,15 @@
 <link rel="stylesheet" href="{{ asset('./css/style.css') }}">
-@include('errors')
 <html>
     <body>
     <main class="dashboard-main">
 
         <header>
-        <h1>Your invitations</h1>
-        <p>{{ $user->name }}</p>
+            <p>Your invitations</p>
+
         </header>
         <section>
-            <p>{{ $receivedEvents }}</p>
             <ul>
-                {{-- @foreach ($user-> as $)
+                @foreach ($user)
                 <li>
                     <div>
                         <p>
@@ -21,7 +19,7 @@
                         </p>
                     </div>
                 </li>
-                @endforeach --}}
+                @endforeach
             </ul>
         </section>
     <form method="get" action="/logout">

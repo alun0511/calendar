@@ -15,8 +15,9 @@
         <button><a href="/createEvents">Create event</a></button>
         <h1>Calendar</h1>
         <button><a href="/logout">Logout</a></button>
+        @include('invitations')
     </header>
-    
+
     <main class="dashboard-main">
     <section class="user-posts">
         <h2>Your accepted invites:</h2>
@@ -32,7 +33,7 @@
                             <p>Location: {{$event->location->name}}</p>
                         </div>
                     </div>
-                    
+
                     <div class="post-dates">
                         <ul>
                             <li>From: {{$event->start_date}}</li>
@@ -40,7 +41,7 @@
                         </ul>
                     </div>
                 </section>
-                
+
                 <section class="participants-list">
                     <h3>Invited users</h3>
                     <ul>
@@ -60,7 +61,7 @@
                     </ul>
                 </section>
             </section>
-                
+
             @endforeach
         </div>
     </section>
