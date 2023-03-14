@@ -10,37 +10,42 @@
 }
 .invitation-card {
     padding: 10px;
-    margin: 10px;
     background-color: white;
-    border-radius: 6px;
-    border: 2px solid #2b2a2a;
+    border-top:  solid 2px #2b2a2a;
 }
 
 .invitation-card p {
     text-align: left;
 }
 
+.invitation-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .invite-btn {
     border-radius: 5px;
-    border: 2px solid #2b2a2a;
-    transition: ease-in 0.2s;
+    border: none;
+    transition: ease-in 0.1s;
+    width: 80px;
 }
 
 .accept:hover {
-    background-color: lightgreen;
-    color: #2b2a2a;
+    background-color: #5c5a5a;
+
 }
 
 .decline:hover {
-    background-color: lightcoral;
+    background-color: rgb(243, 162, 162);
 }
 
 .accept {
-    background-color: #2b2a2a;
+    background-color: #3f3e3e;
     color: white;
 
 }
 .decline {
-    background-color: white;
+    background-color: lightcoral;
     color: #2b2a2a;
 }
