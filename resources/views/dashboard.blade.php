@@ -25,6 +25,11 @@
     <section class="user-posts">
         <h2>Your events:</h2>
         <div class="posts-container">
+
+            @foreach($user->receivedInvitations as $receivedInvitation)
+            {{$receivedInvitation->event_id}};
+            @endforeach
+
             @foreach($user->events as $event)
             @foreach ($event->invitations as $invite)
 
