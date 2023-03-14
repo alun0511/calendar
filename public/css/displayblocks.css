@@ -36,7 +36,7 @@
 }
 
 .invite-accepted {
-    color: green;
+    color: lightgreen;
 }
 
 .invite-pending {
@@ -44,7 +44,7 @@
 }
 
 .invite-declined {
-    color: red;
+    color: lightcoral;
 }
 
 .post-info-section div p,
