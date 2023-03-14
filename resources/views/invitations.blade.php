@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('./css/invite.css') }}">
-
+<section class="invitations">
 <?php
 
 /*
@@ -31,11 +31,10 @@ $notUpdated = [];
 
 <p>You have no invitations.</p>
 
-{{-- if there are any not updated invitations, we want to print those --}}
 @else
-{{-- Loops through the not updated invitations --}}
+{{-- Loops through the not updated invitations and prints them as cards --}}
 @foreach ($notUpdated as $invite)
-{{-- Loops through each  event where the id matches the invitation.event_id --}}
+{{-- Loops through each  event where the id matches the invitation.event_id in order to access data from each event --}}
 @foreach ($events->where('id', $invite->event_id) as $event)
 <div class="invitation-card">
     <p>
@@ -54,6 +53,7 @@ $notUpdated = [];
             @csrf
     </form>
 </div>
+</section>
 @endforeach
 @endforeach
 @endif
