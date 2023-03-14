@@ -28,7 +28,50 @@
         <div class="posts-container">
 
             @foreach($user->receivedInvitations as $receivedInvitation)
-            {{$receivedInvitation->event_id}};
+            @if ($receivedInvitation->accepted === 1)
+            <?php
+                $recievedEvent = $events->where('id', $receivedInvitation->event_id)->first();
+            ?>
+            <section class="post-container">
+
+                <section class="post-info-section">
+                    <div class="post-info">
+                        <h2>{{$recievedEvent->title}}</h2>
+                        <div>
+                            <i>Created by: {{$recievedEvent->creator->name}}</i>
+                            <p>Location: {{$recievedEvent->location->name}}</p>
+                        </div>
+                    </div>
+
+                    <div class="post-dates">
+                        <ul>
+                            <li>From: {{$recievedEvent->start_date}}</li>
+                            <li>To: {{$recievedEvent->end_date}}</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="participants-list">
+                    <h3>Invited users</h3>
+                    <ul>
+                        @foreach ($recievedEvent->invitations as $invite)
+                        <?php if($invite->accepted):?>
+                            <li class="invite-accepted">{{DB::table('users')->where('id', $invite->user_id)->value('name')}}</li>
+                        <?php endif?>
+
+                        <?php if(!$invite->accepted && $invite->updated):?>
+                            <li class="invite-declined">{{DB::table('users')->where('id', $invite->user_id)->value('name')}}</li>
+                        <?php endif?>
+
+                        <?php if(!$invite->accepted && !$invite->updated):?>
+                            <li class="invite-pending">{{DB::table('users')->where('id', $invite->user_id)->value('name')}}</li>
+
+                        <?php endif?>
+                        @endforeach
+                    </ul>
+                </section>
+            </section>
+            @endif
             @endforeach
 
             @foreach($user->events as $event)
