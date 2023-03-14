@@ -27,7 +27,7 @@ Route::get('logout', LogoutController::class);
 
 Route::post('events', CreateEventController::class)->middleware('auth');
 
-Route::get('invitations', InvitationController::class)->middleware('auth');
+Route::post('invitations', InvitationController::class)->middleware('auth');
 
 Route::view('/register', 'register');
 
