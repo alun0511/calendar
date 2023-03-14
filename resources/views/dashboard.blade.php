@@ -11,10 +11,11 @@
     <title>dashboard</title>
 </head>
 <body>
+    @include('invitations')
     <header>
         <button><a href="/createEvents">Create event</a></button>
         <h1>Calendar</h1>
-            @include('invitations')
+
         <button><a href="/logout">Logout</a></button>
 
 
@@ -38,7 +39,7 @@
 
              --}}
 
-            @if ($invite->accepted === 0)
+            @if ($invite->accepted === 1)
 
             {{--
                 Displays accepted invites:
