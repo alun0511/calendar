@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{ asset('./css/invite.css') }}">
 
 <?php
+use App\Models\Invitation;
 
 $received = $user->receivedInvitations->all();
 
@@ -42,8 +43,8 @@ $invitation = $events->where('id', $last->user_id)->last();
             <br>
             End: {{$invitation->end_date}}
             <br>
-
-            <form method="post" action="/event" class="invitation-form">
+            <form method="post" action="/invitation/<?=$invitation->id?>" class="invitation-form">
+                @method('patch')
                 <input name="accept" type="submit"  value="Accept" />
                 <input name="decline" type="submit"  value="Decline" />
                     @csrf

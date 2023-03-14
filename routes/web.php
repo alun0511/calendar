@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CreateEventController;
 use App\Http\Controllers\InvitationController;
+use App\Http\Controllers\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,5 @@ Route::post('/register/attempt', RegisterController::class);
 Route::view('/createEvents', 'createEvents')->middleware('auth');
 
 Route::get('dashboard', DashboardController::class)->middleware('auth');
+
+Route::patch('invitation/{id}', UpdateController::class)->middleware('auth');

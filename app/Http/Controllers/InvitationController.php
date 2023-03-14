@@ -30,9 +30,4 @@ class InvitationController extends Controller
             'received' => $received,
         ]);
     }
-
-    public function updateInvitationById()
-    {
-        $request['id'] = $id;
-    }
 }
