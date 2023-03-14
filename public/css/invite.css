@@ -1,0 +1,46 @@
+.invitations {
+    background-color: lightgreen;
+    border-radius: 2px;
+}
+
+.invitations p {
+    color: #2b2a2a;
+    font-family: sans-serif;
+    text-align: center;
+}
+.invitation-card {
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid #2b2a2a;
+}
+
+.invitation-card p {
+    text-align: left;
+}
+
+.invite-btn {
+    border-radius: 5px;
+    border: 2px solid #2b2a2a;
+    transition: ease-in 0.2s;
+}
+
+.accept:hover {
+    background-color: lightgreen;
+    color: #2b2a2a;
+}
+
+.decline:hover {
+    background-color: lightcoral;
+}
+
+.accept {
+    background-color: #2b2a2a;
+    color: white;
+
+}
+.decline {
+    background-color: white;
+    color: #2b2a2a;
+}

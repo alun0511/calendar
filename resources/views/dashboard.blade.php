@@ -11,7 +11,7 @@
     <title>dashboard</title>
 </head>
 <body>
-    @include('invitations')
+
     <header>
         <button><a href="/createEvents">Create event</a></button>
         <h1>Calendar</h1>
@@ -22,7 +22,9 @@
     </header>
 
     <main class="dashboard-main">
-
+    <section class="invitations">
+        @include('invitations')
+    </section>
     <section class="user-posts">
         <h2>Your events:</h2>
         <div class="posts-container">
