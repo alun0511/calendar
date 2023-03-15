@@ -15,7 +15,7 @@ use App\Models\User;
 |
 */
 
-
+// Handles the fetch made by CreatEvents.js and returns a json containing all existing users.
 
 Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();

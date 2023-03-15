@@ -3,7 +3,6 @@
 namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -32,23 +31,23 @@ class User extends Authenticatable
     ];
     public $timestamps = false;
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
+
 
     public function sentInvitations()
     {
+        // returns invitations made by this user
         return $this->hasMany(Invitation::class, 'event_id');
     }
 
     public function receivedInvitations()
     {
+        // returns invitations made to this user
         return $this->hasMany(Invitation::class, 'user_id');
     }
 
     public function events()
     {
+        // returns events made by this user
         return $this->hasMany(Event::class, 'user_id');
     }
 }

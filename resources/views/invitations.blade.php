@@ -39,6 +39,7 @@ $notUpdated = [];
     <p>
         Starts: {{$event->start_date}} <br> Ends: {{$event->end_date}}
     </p>
+{{-- The form patches the id of the invite as a slug --}}
     <form method="post" action="/invitation/<?=$invite->id?>" class="invitation-form">
         @method('patch')
         <input class="invite-btn decline" name="decline" type="submit"  value="Decline" />
@@ -51,5 +52,3 @@ $notUpdated = [];
 @endif
 </section>
 
-
-{{-- <script type="text/javascript" src="{{ URL::asset('./js/invite.js') }}"></script> --}}

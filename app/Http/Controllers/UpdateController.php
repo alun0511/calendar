@@ -14,14 +14,14 @@ class UpdateController extends Controller
 
     public function __invoke(Invitation $invite, Request $request, $id)
     {
+        // Handles updates of existing invites so that users can accept or decline
 
-        $invitations = Invitation::all();
-
+        // Saves all invites made to user_id of $id
         $invite = $invite::find($id);
 
-        $event_id = $invitations->where('id', $invite->id)->value('event_id');
-        $user_id = $invitations->where('id', $invite->id)->value('user_id');
-
+        // Conditional update for corresponding submit buttons of the form in invitations.blade.php
+        // $invite->updated will return true in both instances to see if the question of accept/decline has been answered or not
+        // $invite->accepted shows what the answer was.
 
         if ($request->input('accept')) {
             $invite->event_id = $invite->event_id;

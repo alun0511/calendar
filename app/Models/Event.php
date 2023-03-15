@@ -27,21 +27,25 @@ class Event extends Model
 
     public function invitedUsers(): BelongsToMany
     {
+        // returns the users that are invited to this event
         return $this->belongsToMany(User::class, 'invitations', 'event_id', 'user_id');
     }
 
     public function location(): HasOne
     {
+        // returns the location of this event
         return $this->hasOne(Location::class, 'id', 'location_id');
     }
 
     public function invitations(): HasMany
     {
+        // returns all invitations made for this event
         return $this->HasMany(Invitation::class, 'event_id');
     }
 
     public function creator(): BelongsTo
     {
+        // returns the creator of the event
         return $this->belongsTo(User::class, 'user_id');
     }
 }

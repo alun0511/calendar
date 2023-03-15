@@ -21,6 +21,7 @@ class InvitationController extends Controller
         $events = Event::all();
         $invitations = Invitation::all();
 
+        // saves the invitations made to the current user and returns it to dashboard
         $received = Invitation::where('user_id', $user->id)->get();
 
         return view('/dashboard', [

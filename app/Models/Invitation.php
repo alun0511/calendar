@@ -21,21 +21,15 @@ class Invitation extends Model
     public $timestamps = false;
 
 
-
-
-    public function inviter(): BelongsTo
-    {
-        $inviter = Event::join('users', 'users.id', '=', 'events.user_id')->get();
-        return $this->belongsTo(User::class, 'event_id');
-    }
-
     public function invited(): BelongsTo
     {
+        // returns the invited user of this invitation
         return $this->belongsTo(User::class, 'user_id');
     }
 
     public function event(): BelongsTo
     {
+        // returns the event of this invitation
         return $this->belongsTo(Event::class, 'id', 'event_id');
     }
 }
