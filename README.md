@@ -5,7 +5,7 @@
 ## Instructions
 1.  
         composer install  
-2.  
+2.  Remove .example from the .env.example file
         php artisan migrate  
     
 3. To test this calendar you preferably need to create atleast two dummy accounts. 
