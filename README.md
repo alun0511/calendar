@@ -1,6 +1,6 @@
 # Alabama Calendar #
 
-### Made by Alfred Unenge and Thomas Danielsson ###
+### Made by [**Alfred Unenge**](https://github.com/alun0511) and [**Thomas Danielsson**](https://github.com/DanielssonThomas/) ###
 
 ## Instructions
 
