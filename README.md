@@ -8,8 +8,9 @@
 2.  Remove ".example" from the .env.example file   
 3.      php artisan migrate  
     
-4.      php artisan serve
-5. To test this calendar you preferably need to create atleast two dummy accounts.  
+4.      php artisan key:generate  
+5.      php artisan serve
+6. To test this calendar you preferably need to create atleast two dummy accounts.  
 You also need to add atleast one location.  
 For example: 
 
