@@ -5,6 +5,12 @@
 ## Instructions
 
 To test this calendar you preferably need to create atleast two dummy accounts. 
+You also need to add atleast one location.
+For example: 
+
+    php artisan tinker
+    App\Models\Location::create(['name' => '319']);
+
 This is so that you can test inviting and accepting or declining invites to and from other users (or just invite yourself).
 
 # Code review
